@@ -1,0 +1,3 @@
+message(STATUS "CMAKE_CURRENT_LIST_DIR=${CMAKE_CURRENT_LIST_DIR}")
+include(${CMAKE_CURRENT_LIST_DIR}/Source/CMakeLists.txt)
+include(${CMAKE_CURRENT_LIST_DIR}/Demo/CMakeLists.txt)
