@@ -11,7 +11,6 @@
 
 #include "console.h"
 
-#define MAX_WDOG_QUEUE_SIZE 8
 
 static const char *TaskName = "WDog";
 static int TaskPriority = tskIDLE_PRIORITY;
@@ -235,7 +234,7 @@ void create_wdog_task(void) {
 
     /* WDog */
 	wdog_initialize();
-    WDog = get_log();
+    WDog = get_wdog();
     if (WDog == NULL) {
     	//CONSOLE_WRITE("WDog is NULL\r\n");
         console_print("log is NULL\n");
@@ -244,7 +243,7 @@ void create_wdog_task(void) {
 
     /* context */
     Context = (struct TaskContextType) {
-    	.id				= TASK_ID_LOG,
+    	.id				= TASK_ID_DOG,
         .name			= TaskName,
         .priority		= TaskPriority,
         .stackSize		= TaskStackSize

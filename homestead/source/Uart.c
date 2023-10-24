@@ -54,6 +54,8 @@ static void init_device(void) {
 }
 
 static void deinit(void) {
+    if (Uart.enabled)
+        close();
     Uart.enabled = 0;
 }
 
@@ -73,7 +75,7 @@ static int open(void) {
 
 static int close(void) {
 	Uart.enabled = 0;
-    //tbd return (qapi_UART_Close(Handle));
+    //tbd close();
     return 0;
 }
 
@@ -82,7 +84,7 @@ static int read(char *buf, const unsigned int length) {
     if ((buf == NULL) || (Uart.enabled == 0) || (length < 1))
         return -1;
 
-    //tbd return qapi_UART_Receive(Handle, buf, UART_BUFFER_SIZE, NULL);
+    //tbd read();
     return 0;
 }
 
@@ -93,12 +95,9 @@ static int write(const char *buf, const unsigned int length) {
         return -1;
 
     /* Transmit the data. */
-    //tbd result = qapi_UART_Transmit(Handle, (char *)buf, length, NULL);
+    //tbd write();
     result = 0;
-    
-    //Sleep(1);
     vTaskDelay( 1 / portTICK_PERIOD_MS);
-
     return result;
 }
 

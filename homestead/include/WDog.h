@@ -37,7 +37,7 @@ typedef struct WDogType {
 
 
 extern void dog_send_report(QueueHandle_t *from, const TaskIdType taskId);
-extern WDogType* dog_get_service(void);
+extern WDogType* get_wdog(void);
 extern void wdog_initialize(void);
 
 

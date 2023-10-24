@@ -227,7 +227,7 @@ void wdog_send_report(QueueHandle_t *from, const TaskIdType taskId) {
 }
 
 
-WDogType* wdog_get_service(void) {
+WDogType* get_wdog(void) {
 	return &WDog;
 }
 

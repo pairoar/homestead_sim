@@ -24,7 +24,7 @@ enum TaskStateType {
 #define EVT_LOG_TASK_OFFSET           0x200
 #define EVT_POWER_TASK_OFFSET         0x300
 #define EVT_PERI_TASK_OFFSET          0x400
-#define EVT_BLE_TASK_OFFSET           0x500
+#define EVT_ATC_TASK_OFFSET           0x500
 
 /* TBD */
 enum ErrorReasonType {
@@ -136,10 +136,10 @@ typedef enum {
 	EVT_ADC_CURRENT_INF,
 	EVT_ADC_MAX,
 
-    EVT_BLE_NONE = EVT_BLE_TASK_OFFSET,
-	EVT_BLUE_AUTH_OK_INF,
-	EVT_BLUE_AUTH_NOK_INF,
-    EVT_BLUE_MAX,
+    EVT_ATC_NONE = EVT_ATC_TASK_OFFSET,
+	EVT_ATC_DOG_RPT_REQ,
+	EVT_ATC_CHECK_REQ,
+    EVT_ATC_MAX,
 
     EVT_MAX,
     EVT_UNKNOWN = EVT_MAX,
